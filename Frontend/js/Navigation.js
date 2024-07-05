@@ -8,17 +8,17 @@ function loadNav() {
 
 document.addEventListener('DOMContentLoaded', loadNav);
 
-// const goToDetail = () => {
-//   window.location.href = "/Frontend/pages/detail.html";
-// }
+const goToDetail = () => {
+  window.location.href = "/Frontend/pages/detail.html";
+}
 
-// const goToGood = () => {
-//   window.location.href = "/Frontend/pages/goodplace.html";
-// }
+const goToGood = () => {
+  window.location.href = "/Frontend/pages/goodplace.html";
+}
 
-// const goToMap = () => {
-//   window.location.href = "/Frontend/pages/maplist.html";
-// }
+const goToMap = () => {
+  window.location.href = "/Frontend/pages/maplist.html";
+}
 
 const goToCommunity = () => {
   window.location.href = "/Frontend/pages/Community.html";

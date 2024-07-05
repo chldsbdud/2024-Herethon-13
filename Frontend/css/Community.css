@@ -1,0 +1,113 @@
+.community-container {
+  color: #141619;
+  font-family: "DM Sans", sans-serif;
+}
+
+.community-header {
+  height: 138px;
+  background-color: #63007F;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #EBEBEB;
+}
+
+.tab {
+  width: 100%;
+  padding: 16px 0;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.tab.active {
+  font-weight: 600;
+  color: #63007F;
+  border-bottom: 2px solid #63007F;
+}
+
+.community-content {
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+
+.post {
+  border-bottom: 1px solid #EBEBEB;
+  padding: 20px 0;
+  text-align: left;
+}
+
+.post-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  margin: 10px 0;
+}
+
+.post-content {
+  margin-bottom: 16px;
+  color: #687684;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.post-footer span {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+.write-button {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #63007F;
+  border: 1.5px solid #63007F;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 76px;
+}
+
+footer div {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+}

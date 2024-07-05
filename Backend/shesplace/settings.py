@@ -41,28 +41,25 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles','corsheaders', #CORS 관련 추가,
 
     # DRF
     'rest_framework',
-
-    # filter
     'django_filters',
+    'rest_framework_simplejwt',
+    'rest_framework.authtoken',
+
 
     # internal APP
-    'rest_framework_simplejwt',
-    'freeboard',
-    'api',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
-    'rest_framework.authtoken',
-
-    # internal APP
+    'place',
+    'freeboard',
+    'api',
     'recruitboard',
-    'place'
 
 ]
 TOKEN_MODEL = None
@@ -74,10 +71,11 @@ AUTH_USER_MODEL = 'api.CustomUser'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-
     'allauth.account.auth_backends.AuthenticationBackend',
+    'rest_framework.permissions.IsAuthenticated',
 ]
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # CORS 관련 추가 (가장 상단에 위치)
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -111,6 +109,13 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
+# CORS 설정
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:64309",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True 
+
 ROOT_URLCONF = 'shesplace.urls'
 
 TEMPLATES = [
@@ -128,10 +133,11 @@ TEMPLATES = [
         },
     },
 ]
+
 SITE_ID = 1
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/account/kakao/profile'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET = True 
 WSGI_APPLICATION = 'shesplace.wsgi.application'
@@ -200,11 +206,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
     'rest_framework.permissions.IsAuthenticated',
+    
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {

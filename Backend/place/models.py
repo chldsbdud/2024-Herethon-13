@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 # Create your models here.
-User = get_user_model()
-
+# User = get_user_model()
+from api.models import CustomUser
 # Create your models here.
 
 class Place(models.Model):
@@ -22,7 +22,7 @@ class Place(models.Model):
     
 class Review(models.Model):
     # 기본 User 참조. 후에 커스텀 User로 변경 필요
-    review_writer_id = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='작성자', null=True, blank=True)
+    review_writer_id = models.ForeignKey(to=CustomUser, on_delete=models.CASCADE, verbose_name='작성자', null=True, blank=True)
     review_content = models.TextField(verbose_name='리뷰 내용')
     review_place_id = models.ForeignKey(to=Place, on_delete=models.CASCADE, verbose_name='리뷰가 달린 장소 id', null=True, blank=True)
     review_rate = models.IntegerField(verbose_name='별점')
@@ -47,5 +47,5 @@ class WomenOnlyPlace(models.Model):
 
 class Scrap(models.Model):
     scrap_place = models.ForeignKey(to=Place, on_delete=models.CASCADE, null=True, blank=True, related_name='scrap_place')
-    scrap_user_id = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='스크랩한 유저', null=True, blank=True)
+    scrap_user_id = models.ForeignKey(to=CustomUser, on_delete=models.CASCADE, verbose_name='스크랩한 유저', null=True, blank=True)
 

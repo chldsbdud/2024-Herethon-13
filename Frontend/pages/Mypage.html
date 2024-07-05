@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mypage</title>
+    <link rel="stylesheet" href="/Frontend/css/contain.css">
+    <link rel="stylesheet" href="/Frontend/css/Mypage.css">
+    <link rel="stylesheet" href="/Frontend/css/Navigation.css">
+
+</head>
+<body>
+    <div class="my-page">
+        <div class="profile">
+            <img class="profile-image" src="/Frontend/img/profile.png" alt="Profile" />
+            <div class="profile-name">우리집대표똑똑이</div>
+            <button class="profile-edit-btn">개인 정보 관리</button>
+        </div>
+        <div class="mypage-menu">
+            <div class="mypage-menu-item"> 
+                <span>스크랩</span>
+                <img class="arrow" src="/Frontend/img/rightarrow.png" alt="Arrow" />
+            </div>
+            <div class="mypage-menu-item">
+                <span>리뷰 작성</span>
+                <img class="arrow" src="/Frontend/img/rightarrow.png" alt="Arrow" />
+            </div>
+            <div class="mypage-menu-item">
+                <span>나의 활동</span>
+                <img class="arrow" src="/Frontend/img/rightarrow.png" alt="Arrow" />
+            </div>
+            <div class="mypage-menu-item">
+                <span>1:1 문의</span>
+                <img class="arrow" src="/Frontend/img/rightarrow.png" alt="Arrow" />
+            </div>
+            <div class="mypage-menu-item logout" onclick="handleLogout()">
+                <span>로그아웃</span>
+                <img class="logout-icon" src="/Frontend/img/logout.png" alt="Logout" />
+            </div>
+        </div>
+        <footer class="footer">
+            <!-- <div class="footer-item">굿 플레이스</div>
+            <div class="footer-item">여성 전용 시설</div>
+            <div class="footer-item" onclick="navigateToCommunity()">커뮤니티</div>
+            <div class="footer-item active">마이페이지</div> -->
+            
+        </footer>
+    </div>
+
+    <script src="/Frontend/js/Mypage.js"></script>
+    <script src="/Frontend/js/Navigation.js"></script>
+</body>
+</html>

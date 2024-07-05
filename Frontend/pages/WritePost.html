@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Post</title>
+    <link rel="stylesheet" href="/Frontend/css/contain.css">
+    <link rel="stylesheet" href="/Frontend/css/WritePost.css">
+</head>
+<body>
+    <div class="writepost">
+        <div class="header-form">
+            <img class="btn-back" src="/Frontend/img/close.png" onclick="handleCancel()" alt="Cancel" />
+            <div class="title-form" id="formTitle"></div>
+        </div>
+        <form class="writepost-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <input
+                    class="writepost-input-title"
+                    type="text" 
+                    placeholder="제목" 
+                    id="titleInput"
+                />
+                <textarea
+                    class="writepost-textarea"
+                    placeholder="내용을 입력하세요." 
+                    id="contentInput"
+                ></textarea>
+            </div>
+            <div class="form-group form-group-checkbox">
+                <input type="checkbox" id="anonymous" />
+                <label class="checkbox-text" for="anonymous">익명</label>
+            </div>
+            <button type="submit" class="btn">등록하기</button>
+        </form>
+    </div>
+
+    <script src="/Frontend/js/WritePost.js"></script>
+</body>
+</html>

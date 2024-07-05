@@ -1,0 +1,53 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  padding-left: 32px;
+  background-image: url('../img/background.png');
+}
+
+.login-title {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  font-size: 2rem;
+  margin-top: 400px;
+  margin-bottom: 32px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 48px;
+  right: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 16px;
+  background-color: #63007F;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* 데스크탑 버전 */
+@media (min-width: 768px) {
+  html {
+      font-size: 18px; 
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+      font-size: 20px;
+  }
+}

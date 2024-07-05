@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/Frontend/css/contain.css">
+    <link rel="stylesheet" href="/Frontend/css/Signup.css">
+</head>
+<body>
+    <div class="signup">
+        <div class="header-form">
+            <img class="btn-back" src="/Frontend/img/back.png" onclick="goBack()" alt="Back" />
+            <div class="title-form">닉네임 설정</div>
+        </div>
+        <div class="nickname-content">
+            <label for="nickname">닉네임</label>
+            <input
+                class="nickname-input"
+                type="text"
+                id="nickname"
+                placeholder="닉네임을 입력해 주세요."
+                oninput="handleNicknameChange(event)"
+            />
+            <div id="nickname-warning" class="nickname-warning">닉네임은 최대 10자까지 가능합니다.</div>
+        </div>
+        <button class="btn" onclick="handleSubmit()">회원가입</button>
+    </div>
+
+    <script src="/Frontend/js/Signup.js"></script>
+</body>
+</html>

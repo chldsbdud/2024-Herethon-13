@@ -39,26 +39,25 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles','corsheaders', #CORS 관련 추가,
 
     # DRF
     'rest_framework',
-
+    'django_filters',
     'rest_framework_simplejwt',
-    'freeboard',
-    'api',
+    'rest_framework.authtoken',
+
+
+    # internal APP
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
-    'rest_framework.authtoken',
     'place',
-
-
-    # internal APP
+    'freeboard',
+    'api',
     'recruitboard',
-    # 'django-filter',
 
 ]
 TOKEN_MODEL = None
@@ -74,6 +73,7 @@ AUTHENTICATION_BACKENDS = [
     'rest_framework.permissions.IsAuthenticated',
 ]
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # CORS 관련 추가 (가장 상단에 위치)
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -83,6 +83,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
+# CORS 설정
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:64309",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True 
 
 ROOT_URLCONF = 'shesplace.urls'
 
@@ -101,6 +108,7 @@ TEMPLATES = [
         },
     },
 ]
+
 SITE_ID = 1
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
@@ -180,6 +188,7 @@ REST_FRAMEWORK = {
         "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {

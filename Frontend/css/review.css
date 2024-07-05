@@ -18,33 +18,43 @@
   cursor: pointer;
 }
 
-.h3{
-    position: absolute;
-    margin-top: 17px;
-    margin-left: 140px;
+.h3 {
+  position: absolute;
+  margin-top: 17px;
+  margin-left: 140px;
 }
 
 .reviewtext {
-    position: absolute;
-    margin-top: 350px;
-    margin-left: 110px;
-    cursor: pointer;
-  }
-
-.image{
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 93px;
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 110px;
+  cursor: pointer;
 }
 
-.star{
-    position: absolute;
-    margin-top: 430px;
-    margin-left: 20px;
+.stars {
+  position:absolute;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-top: 420px;
+  margin-left: 10px;
+}
 
+.star {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 8px; 
+}
+
+.image {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 93px;
 }
 
 .inputcontent {
+  resize: none;
   position: absolute;
   margin-top: 460px;
   display: flex;
@@ -54,7 +64,7 @@
   border-radius: 20px;
   border: none;
   background-color: #f2e8f5;
-  outline: none; 
+  outline: none;
   padding-left: 10px;
   padding-bottom: 100px;
 }
@@ -77,18 +87,18 @@
 }
 
 .location2 {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 50px;
-    width: 40%;
-    margin-left: 200px;
-    margin-top: 700px;
-    border-radius: 30px;
-    border: none;
-    background-color: #5a0d7a;
-    color: #f2e8f5;
-    cursor: pointer;
-  }
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 50px;
+  width: 40%;
+  margin-left: 200px;
+  margin-top: 700px;
+  border-radius: 30px;
+  border: none;
+  background-color: #5a0d7a;
+  color: #f2e8f5;
+  cursor: pointer;
+}

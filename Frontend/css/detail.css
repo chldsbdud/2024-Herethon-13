@@ -55,15 +55,28 @@
   display: none; 
 }
 
+#reviewContainer {
+  background-color: #f2f2f2; 
+  border-radius: 10px; 
+  padding: 20px;
+  margin-top: 20px; 
+  height: 90px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
 .reviewbox {
   width: 100%; 
   min-height: 150px; 
   height: auto;
   max-height: 300px;
-  background-color: #f2e8f5;
+  background-color: white;
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.top-section {
+  margin-bottom: 10px;
 }
 
 .large-text {
@@ -101,7 +114,7 @@
 
 
 .location {
-  position: absolute;
+  position: absolute; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,6 +127,7 @@
   background-color: #f2e8f5;
   color: #5A0D7A;
   cursor: pointer;
+  bottom: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
 }
-
-
